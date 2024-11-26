@@ -29,10 +29,10 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build -t username/simple-python-docker:latest .
-          docker tag username/simple-python-docker:latest username/simple-python-docker:${{ github.sha }}
+          docker tag username/simple-python-docker:latest jfritzjunker/simple-python-docker:${{ github.sha }}
 
       # Step 5: Push the Docker image to Docker Hub
       - name: Push Docker Image
         run: |
-          docker push username/simple-python-docker:latest
-          docker push username/simple-python-docker:${{ github.sha }}
+          docker push jfritzjunker/simple-python-docker:latest
+          docker push jfritzjunker/simple-python-docker:${{ github.sha }}
